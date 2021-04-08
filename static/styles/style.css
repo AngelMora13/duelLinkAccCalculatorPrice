@@ -21,7 +21,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
+    background-size: 600px;
     padding: 10px;
 }
 fieldset{
@@ -51,6 +51,8 @@ input[type="number"]{
     max-width: 20vw;
     font-size: 0.8rem;
     border: 1px solid #00172D;
+    border-radius: 5px;
+    text-align: center;
 }
 .btnContainer{
     display: flex;
