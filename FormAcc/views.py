@@ -10,9 +10,9 @@ def FormCalc(request):
     if request.method=="POST":
         form = request.POST
         form = form.dict()     
-        form["PriceGems"] = priceGems(form["gems"]) if form["gems"] else ""
+        form["PriceGems"] = priceGems(form["gems"]) if form["gems"] else "0.0$"
         form["PriceCards"] = priceCards(form["URcards"],form["SRcards"]) \
-            if form["URcards"] or form["SRcards"] else ""
+            if form["URcards"] or form["SRcards"] else "0.0$"
 
         phases = [form["PhaseDM"],form["PhaseDSOD"],form["PhaseGX"],\
             form["PhaseDS"],form["PhaseZexal"]]
@@ -31,7 +31,7 @@ def FormCalc(request):
                 form["ticketsN"],form["ticketsSkill"]]
 
         form["PriceTickets"] = priceTickets(tickets)
-        form["total"] = round(totalAccount,2)
+        form["total"] = f"{round(totalAccount,2)}$"
     return render(request,"form/index.html",form)
 
 def priceGems(gems):
