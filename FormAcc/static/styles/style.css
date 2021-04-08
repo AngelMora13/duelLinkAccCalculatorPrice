@@ -1,0 +1,94 @@
+.container{
+    max-width: 600px;
+}
+.title{
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+}
+body{    
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background: #00172D;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    background: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+}
+fieldset{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px 0;
+    background: rgba(250,250,250,0.7);
+    box-shadow: 2px 2px 5px #00172D;
+}
+legend{
+    color: black;
+    font-size: 1.2rem;
+    float: left;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1rem;
+    text-align: center;
+}
+input[type="number"]{
+    max-width: 20vw;
+    font-size: 0.8rem;
+    border: 1px solid #00172D;
+}
+.btnContainer{
+    display: flex;
+    flex-direction: row;
+    
+}
+.btn{
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    display: block;
+    font-size: 1.5rem;
+}
+.btnRestore{
+    background: #00172D;
+    color: white;
+    border: none;
+}
+.btn:hover{
+    background: white;
+    border: #00172D 1px solid;
+    color: #00172D;
+}
+.btnCalculate{
+    background: #FFBF00;
+    border: #00172D 1px solid;
+    color: black;
+}
+@media only screen and (min-width:600px){
+    body{
+        background: #00172D;        
+        display: grid;
+        place-items: center;
+    }
+    .form{
+        background-size: contain;
+        padding: 20px;
+    }
+}

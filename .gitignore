@@ -1,0 +1,5 @@
+/duelcalc
+/FormAcc/__pycache__
+/FormAcc/migrations
+db.sqlite3
+Procfile

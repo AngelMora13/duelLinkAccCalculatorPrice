@@ -1,0 +1,147 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Calculator to have an approximate 
+      value of the value of a starter account of the game yugioh duel links"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/style.css' %}"
+    />
+    <script src="{% static 'function/index.js' %}"></script>
+    <title>Calculator DuelLinks || Prices</title>
+  </head>
+  <body>
+    <article class="container">
+      <header class="title">
+        <h1>Calculator for DuelLinks Account</h1>
+      </header>
+      <form class="form" method="POST" action="{% url 'calculator:FormCalc' %}">
+        {% csrf_token %}
+        {% if total %}
+        <fieldset>
+          <legend>Price for Account {{total}}</legend>
+        </fieldset>
+        {% endif %}
+        <fieldset>
+          <legend>Price for Amount of Gems: {{PriceGems}} </legend>
+          <label>
+            Amount of Gems
+            <input id="gems" type="number" name="gems" value="{{gems}}" placeholder="Gems" />
+          </label>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Price for Amount of Hight Rarity Cards: {{ PriceCards }}</legend>
+          <label>
+            Amount of UR Cards
+            <input type="number" name="URcards" value="{{URcards}}" placeholder="UR Cards" />
+          </label>
+          <label>
+            Amount of SR Cards
+            <input type="number" name="SRcards" value="{{SRcards}}" placeholder="SR Cards" />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Price for Phases´s Levels: {{ PricePhases }}</legend>
+          <label>
+            Phase in Duel Monster
+            <input type="number" name="PhaseDM" value="{{PhaseDM}}" placeholder="Phase DM" />
+          </label>
+          <label>
+            Phase in Dark Side of Dimensions
+            <input type="number" name="PhaseDSOD" value="{{PhaseDSOD}}" placeholder="Phase DSOD" />
+          </label>
+          <label>
+            Phase in GX Word
+            <input type="number" name="PhaseGX" value="{{PhaseGX}}" placeholder="Phase GX" />
+          </label>
+          <label>
+            Phase in 5D´s word
+            <input type="number" name="PhaseDS" value="{{PhaseDS}}" placeholder="Phase 5D´s" />
+          </label>
+          <label>
+            Phase in ZEXAL WORD
+            <input type="number" name="PhaseZexal" value="{{PhaseZexal}}" placeholder="Phase ZEXAL" />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Price for Characters´s Levels: {{ PriceChar }}</legend>
+          <label>
+            Level > 35 
+            <input type="number" name="Cha35" value="{{Cha35}}" placeholder="35 or more" />
+          </label>
+          <label>
+            Level > 30 
+            <input type="number" name="Cha30" value="{{Cha30}}" placeholder="between 30 and 34" />
+          </label>
+          <label>
+            Level > 25 
+            <input type="number" name="Cha25" value="{{Cha25}}" placeholder="between 25 and 29" />
+          </label>
+          <label>
+            Level > 20 
+            <input type="number" name="Cha20" value="{{Cha20}}" placeholder="between 20 and 24" />
+          </label>
+          <label>
+            Level > 15 
+            <input type="number" name="Cha15" value="{{Cha15}}" placeholder="between 15 and 19" />
+          </label>
+          <label>
+            Level > 10 
+            <input type="number" name="Cha10" value="{{Cha10}}" placeholder="between 10 and 14" />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Price for Amount of Tickets: {{ PriceTickets }}</legend>
+          <label>
+            UR Tickets 
+            <input type="number" name="ticketsUR" value="{{ticketsUR}}" placeholder="UR Tickets" />
+          </label>
+          <label>
+            UR Dream Tickets
+            <input type="number" name="ticketsURDream" value="{{ticketsURDream}}" placeholder="UR Dream Tickets" />
+          </label>
+          <label>
+            SR Tickets 
+            <input type="number" name="ticketsSR" value="{{ticketsSR}}" placeholder="SR Tickets" />
+          </label>
+          <label>
+            SR Dream Tickets
+            <input type="number" name="ticketsSRDream" value="{{ticketsSRDream}}" placeholder="SR Dream Tickets" />
+          </label>
+          <label>
+            S/U Tickets 
+            <input type="number" name="ticketsSU" value="{{ticketsSU}}" placeholder="S/U Tickets" />
+          </label>
+          <label>
+            R Tickets 
+            <input type="number" name="ticketsR" value="{{ticketsR}}" placeholder="R Tickets" />
+          </label>
+          <label>
+            N Tickets 
+            <input type="number" name="ticketsN" value="{{ticketsN}}" placeholder="N Tickets" />
+          </label>
+          <label>
+            Skill Tickets 
+            <input type="number" name="ticketsSkill" value="{{ticketsSkill}}" placeholder="Skill Tickets" />
+          </label>
+        </fieldset>
+        <div class="btnContainer">
+          <input class="btn btnRestore" type="reset" value="Restore" onclick="restore()" />
+        <input class="btn btnCalculate" type="submit" value="Calculate" />
+        </div>
+      </form>
+    </article>
+  </body>
+</html>
