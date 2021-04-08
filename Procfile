@@ -1,0 +1,1 @@
+web: gunicorn duelcalc.wsgi --log-file -

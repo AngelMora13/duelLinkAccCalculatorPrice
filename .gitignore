@@ -1,5 +1,4 @@
-/duelcalc
+/duelcalc/__pycache__
 /FormAcc/__pycache__
-/FormAcc/migrations
 db.sqlite3
-Procfile
+/venv
