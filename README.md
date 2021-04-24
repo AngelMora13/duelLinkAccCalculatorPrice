@@ -1,7 +1,7 @@
 # Duel Link Calculator
 Aplicación web para establecer el precio de las cuentas (nuevas) del juego YuGiOh Duel Link
 
-enlace para acceder: [Duel Link Calculator](https://duel-link-calc.herokuapp.com/)
+enlace para acceder: [Duel Link Calculator](https://calculatorofgreed.herokuapp.com/)
 
 ## valor de las cuentas
 El valor de las cuentas esta determinado por:
