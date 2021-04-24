@@ -10,13 +10,39 @@
       content="Calculator to have an approximate 
       value of the value of a starter account of the game yugioh duel links"
     />
+    <meta name="distribution" content="global" />
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'styles/style.css' %}"
     />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'icons/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'icons/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'icons/favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="{% static 'icons/site.webmanifest' %}" />
+    <link
+      rel="mask-icon"
+      href="{% static 'icons/safari-pinned-tab.svg' %}"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#00172D" />
     <script src="{% static 'function/index.js' %}"></script>
-    <title>Calculator DuelLinks || Prices</title>
+    <title>Calculator || Calculator of Greed</title>
   </head>
   <body>
     <article class="container">
@@ -24,29 +50,46 @@
         <h1>Calculator for DuelLinks Account</h1>
       </header>
       <form class="form" method="POST" action="{% url 'calculator:FormCalc' %}">
-        {% csrf_token %}
-        {% if total %}
+        {% csrf_token %} {% if total %}
         <fieldset>
           <legend>Price for Account {{total}}</legend>
         </fieldset>
         {% endif %}
         <fieldset>
-          <legend>Price for Amount of Gems: {{PriceGems}} </legend>
+          <legend>Price for Amount of Gems: {{PriceGems}}</legend>
           <label>
             Amount of Gems
-            <input id="gems" type="number" name="gems" value="{{gems}}" placeholder="Gems" />
+            <input
+              id="gems"
+              type="number"
+              name="gems"
+              value="{{gems}}"
+              placeholder="Gems"
+            />
           </label>
         </fieldset>
-        
+
         <fieldset>
-          <legend>Price for Amount of Hight Rarity Cards: {{ PriceCards }}</legend>
+          <legend>
+            Price for Amount of Hight Rarity Cards: {{ PriceCards }}
+          </legend>
           <label>
             Amount of UR Cards
-            <input type="number" name="URcards" value="{{URcards}}" placeholder="UR Cards" />
+            <input
+              type="number"
+              name="URcards"
+              value="{{URcards}}"
+              placeholder="UR Cards"
+            />
           </label>
           <label>
             Amount of SR Cards
-            <input type="number" name="SRcards" value="{{SRcards}}" placeholder="SR Cards" />
+            <input
+              type="number"
+              name="SRcards"
+              value="{{SRcards}}"
+              placeholder="SR Cards"
+            />
           </label>
         </fieldset>
 
@@ -54,92 +97,192 @@
           <legend>Price for Phases´s Levels: {{ PricePhases }}</legend>
           <label>
             Phase in Duel Monster
-            <input type="number" name="PhaseDM" value="{{PhaseDM}}" placeholder="Phase DM" />
+            <input
+              type="number"
+              name="PhaseDM"
+              value="{{PhaseDM}}"
+              placeholder="Phase DM"
+            />
           </label>
           <label>
             Phase in Dark Side of Dimensions
-            <input type="number" name="PhaseDSOD" value="{{PhaseDSOD}}" placeholder="Phase DSOD" />
+            <input
+              type="number"
+              name="PhaseDSOD"
+              value="{{PhaseDSOD}}"
+              placeholder="Phase DSOD"
+            />
           </label>
           <label>
             Phase in GX Word
-            <input type="number" name="PhaseGX" value="{{PhaseGX}}" placeholder="Phase GX" />
+            <input
+              type="number"
+              name="PhaseGX"
+              value="{{PhaseGX}}"
+              placeholder="Phase GX"
+            />
           </label>
           <label>
             Phase in 5D´s word
-            <input type="number" name="PhaseDS" value="{{PhaseDS}}" placeholder="Phase 5D´s" />
+            <input
+              type="number"
+              name="PhaseDS"
+              value="{{PhaseDS}}"
+              placeholder="Phase 5D´s"
+            />
           </label>
           <label>
             Phase in ZEXAL WORD
-            <input type="number" name="PhaseZexal" value="{{PhaseZexal}}" placeholder="Phase ZEXAL" />
+            <input
+              type="number"
+              name="PhaseZexal"
+              value="{{PhaseZexal}}"
+              placeholder="Phase ZEXAL"
+            />
           </label>
         </fieldset>
 
         <fieldset>
           <legend>Price for Characters´s Levels: {{ PriceChar }}</legend>
           <label>
-            Level > 35 
-            <input type="number" name="Cha35" value="{{Cha35}}" placeholder="35 or more" />
+            Level > 35
+            <input
+              type="number"
+              name="Cha35"
+              value="{{Cha35}}"
+              placeholder="35 or more"
+            />
           </label>
           <label>
-            Level > 30 
-            <input type="number" name="Cha30" value="{{Cha30}}" placeholder="30 - 34" />
+            Level > 30
+            <input
+              type="number"
+              name="Cha30"
+              value="{{Cha30}}"
+              placeholder="30 - 34"
+            />
           </label>
           <label>
-            Level > 25 
-            <input type="number" name="Cha25" value="{{Cha25}}" placeholder="25 - 29" />
+            Level > 25
+            <input
+              type="number"
+              name="Cha25"
+              value="{{Cha25}}"
+              placeholder="25 - 29"
+            />
           </label>
           <label>
-            Level > 20 
-            <input type="number" name="Cha20" value="{{Cha20}}" placeholder="20 - 24" />
+            Level > 20
+            <input
+              type="number"
+              name="Cha20"
+              value="{{Cha20}}"
+              placeholder="20 - 24"
+            />
           </label>
           <label>
-            Level > 15 
-            <input type="number" name="Cha15" value="{{Cha15}}" placeholder="15 - 19" />
+            Level > 15
+            <input
+              type="number"
+              name="Cha15"
+              value="{{Cha15}}"
+              placeholder="15 - 19"
+            />
           </label>
           <label>
-            Level > 10 
-            <input type="number" name="Cha10" value="{{Cha10}}" placeholder="10 - 14" />
+            Level > 10
+            <input
+              type="number"
+              name="Cha10"
+              value="{{Cha10}}"
+              placeholder="10 - 14"
+            />
           </label>
         </fieldset>
 
         <fieldset>
           <legend>Price for Amount of Tickets: {{ PriceTickets }}</legend>
           <label>
-            UR Tickets 
-            <input type="number" name="ticketsUR" value="{{ticketsUR}}" placeholder="UR" />
+            UR Tickets
+            <input
+              type="number"
+              name="ticketsUR"
+              value="{{ticketsUR}}"
+              placeholder="UR"
+            />
           </label>
           <label>
             UR Dream Tickets
-            <input type="number" name="ticketsURDream" value="{{ticketsURDream}}" placeholder="UR Dream" />
+            <input
+              type="number"
+              name="ticketsURDream"
+              value="{{ticketsURDream}}"
+              placeholder="UR Dream"
+            />
           </label>
           <label>
-            SR Tickets 
-            <input type="number" name="ticketsSR" value="{{ticketsSR}}" placeholder="SR" />
+            SR Tickets
+            <input
+              type="number"
+              name="ticketsSR"
+              value="{{ticketsSR}}"
+              placeholder="SR"
+            />
           </label>
           <label>
             SR Dream Tickets
-            <input type="number" name="ticketsSRDream" value="{{ticketsSRDream}}" placeholder="SR Dream" />
+            <input
+              type="number"
+              name="ticketsSRDream"
+              value="{{ticketsSRDream}}"
+              placeholder="SR Dream"
+            />
           </label>
           <label>
-            S/U Tickets 
-            <input type="number" name="ticketsSU" value="{{ticketsSU}}" placeholder="S/U" />
+            S/U Tickets
+            <input
+              type="number"
+              name="ticketsSU"
+              value="{{ticketsSU}}"
+              placeholder="S/U"
+            />
           </label>
           <label>
-            R Tickets 
-            <input type="number" name="ticketsR" value="{{ticketsR}}" placeholder="R" />
+            R Tickets
+            <input
+              type="number"
+              name="ticketsR"
+              value="{{ticketsR}}"
+              placeholder="R"
+            />
           </label>
           <label>
-            N Tickets 
-            <input type="number" name="ticketsN" value="{{ticketsN}}" placeholder="N" />
+            N Tickets
+            <input
+              type="number"
+              name="ticketsN"
+              value="{{ticketsN}}"
+              placeholder="N"
+            />
           </label>
           <label>
-            Skill Tickets 
-            <input type="number" name="ticketsSkill" value="{{ticketsSkill}}" placeholder="Skill" />
+            Skill Tickets
+            <input
+              type="number"
+              name="ticketsSkill"
+              value="{{ticketsSkill}}"
+              placeholder="Skill"
+            />
           </label>
         </fieldset>
         <div class="btnContainer">
-          <input class="btn btnRestore" type="reset" value="Restore" onclick="restore()" />
-        <input class="btn btnCalculate" type="submit" value="Calculate" />
+          <input
+            class="btn btnRestore"
+            type="reset"
+            value="Restore"
+            onclick="restore()"
+          />
+          <input class="btn btnCalculate" type="submit" value="Calculate" />
         </div>
       </form>
     </article>

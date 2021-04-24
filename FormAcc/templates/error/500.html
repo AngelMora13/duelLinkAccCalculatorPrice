@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/404.css' %}"
+    />
+    <title>Error 500 Server Error || Calculator of Greed</title>
+  </head>
+  <body>
+  <header><h1>Calculator of Greed</h1></header>
+    <div class="container">
+    <header>
+        <h1 class="title">Server Error</h1>
+        <h2>Error: 500</h2>
+    </header>
+    <p>just numbers whitout specials characters</p>
+    <buttom class="btnError"><a href="{% url 'calculator:FormCalc' %}">Return to Calculator</a></buttom>
+    </div>
+  </body>
