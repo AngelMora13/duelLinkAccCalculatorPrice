@@ -18,12 +18,11 @@ from django.urls import path
 from django.urls.conf import include
 from django.conf.urls.static import static
 from django.conf import settings
-from django.conf.urls import handler404,handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("FormAcc.urls"))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-handler404="FormAcc.views.page_404_not_found"
-handler500="FormAcc.views.page_500_error_server"
+handler404 = "FormAcc.views.page_404_not_found"
+handler500= "FormAcc.views.page_500_error_server"

@@ -1,6 +1,7 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render
-from django.template import RequestContext,Template
+from django.views.defaults import page_not_found,server_error
+
+
 import math
 
 # Create your views here.
@@ -36,11 +37,11 @@ def FormCalc(request):
         form["total"] = f"{round(totalAccount,2)}$"
     return render(request,"form/index.html",form)
 
-def page_404_not_found(request,exception,template_name='404.html'):
-    return render(request,"error/404.html",status=404)
+def page_404_not_found(request,exception):
+    return page_not_found(request,exception,template_name="error/404.html")
 
-def page_500_error_server(request,template_name='500.html'):
-    return render(request,"error/500.html",status=500)
+def page_500_error_server(request):
+    return server_error(request,template_name="error/500.html")
 
 def priceGems(gems):
     gems=int(gems)
